@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-cli/cli/cli.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-cli/node_modules/cli/cli.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-cli">npmtest-cli (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-cli/cli/cli.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-cli/node_modules/cli/cli.js</span></h1>
     <h2>
         
         Statements: <span class="metric">12.79% <small>(72 / 563)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-cli/cli/</a> &#187; cli.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-cli/node_modules/cli/</a> » cli.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -1383,8 +1381,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">83</span>
+<span class="cline-any cline-yes">83</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2510,8 +2508,8 @@ cli.output = console.log;
 cli.exit = require('exit');
 &nbsp;
 cli.no_color = false;
-<span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.NODE_DISABLE_COLORS || process.env.TERM === 'dumb') {
-<span class="cstat-no" title="statement not covered" >    cli.no_color = true;</span>
+<span class="missing-if-branch" title="if path not taken">I</span>if (process.env.NODE_DISABLE_COLORS || process.env.TERM === 'dumb') {
+<span class="cstat-no" title="statement not covered">    cli.no_color = true;</span>
 }
 &nbsp;
 /**
@@ -2532,36 +2530,36 @@ var enable = {
     catchall: false, //Adds -c,--catch =&gt; catch and output uncaughtExceptions
     glob: false      //Adds glob matching =&gt; use cli.glob(arg)
 }
-cli.enable = <span class="fstat-no" title="function not covered" >function (/*plugins*/) {</span>
-<span class="cstat-no" title="statement not covered" >    Array.prototype.slice.call(arguments).forEach(<span class="fstat-no" title="function not covered" >function (plugin) {</span></span>
-<span class="cstat-no" title="statement not covered" >        switch (plugin) {</span>
+cli.enable = <span class="fstat-no" title="function not covered">function (/*plugins*/) {</span>
+<span class="cstat-no" title="statement not covered">    Array.prototype.slice.call(arguments).forEach(<span class="fstat-no" title="function not covered">function (plugin) {</span></span>
+<span class="cstat-no" title="statement not covered">        switch (plugin) {</span>
         case 'catchall':
-<span class="cstat-no" title="statement not covered" >            process.on('uncaughtException', <span class="fstat-no" title="function not covered" >function (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >                cli.error('Uncaught exception: ' + (err.msg || err));</span>
+<span class="cstat-no" title="statement not covered">            process.on('uncaughtException', <span class="fstat-no" title="function not covered">function (err) {</span></span>
+<span class="cstat-no" title="statement not covered">                cli.error('Uncaught exception: ' + (err.msg || err));</span>
             });
-<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="cstat-no" title="statement not covered">            break;</span>
         case 'help': case 'version': case 'status':
         case 'autocomplete': case 'timeout':
             //Just add switches.
-<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="cstat-no" title="statement not covered">            break;</span>
         case 'glob':
-<span class="cstat-no" title="statement not covered" >            cli.glob = require('glob');</span>
-<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="cstat-no" title="statement not covered">            cli.glob = require('glob');</span>
+<span class="cstat-no" title="statement not covered">            break;</span>
         default:
-<span class="cstat-no" title="statement not covered" >            cli.fatal('Unknown plugin "' + plugin + '"');</span>
-<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="cstat-no" title="statement not covered">            cli.fatal('Unknown plugin "' + plugin + '"');</span>
+<span class="cstat-no" title="statement not covered">            break;</span>
         }
-<span class="cstat-no" title="statement not covered" >        enable[plugin] = true;</span>
+<span class="cstat-no" title="statement not covered">        enable[plugin] = true;</span>
     });
-<span class="cstat-no" title="statement not covered" >    return cli;</span>
+<span class="cstat-no" title="statement not covered">    return cli;</span>
 }
-cli.disable = <span class="fstat-no" title="function not covered" >function (/*plugins*/) {</span>
-<span class="cstat-no" title="statement not covered" >    Array.prototype.slice.call(arguments).forEach(<span class="fstat-no" title="function not covered" >function (plugin) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (enable[plugin]) {</span>
-<span class="cstat-no" title="statement not covered" >            enable[plugin] = false;</span>
+cli.disable = <span class="fstat-no" title="function not covered">function (/*plugins*/) {</span>
+<span class="cstat-no" title="statement not covered">    Array.prototype.slice.call(arguments).forEach(<span class="fstat-no" title="function not covered">function (plugin) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (enable[plugin]) {</span>
+<span class="cstat-no" title="statement not covered">            enable[plugin] = false;</span>
         }
     });
-<span class="cstat-no" title="statement not covered" >    return cli;</span>
+<span class="cstat-no" title="statement not covered">    return cli;</span>
 }
 &nbsp;
 /**
@@ -2572,8 +2570,8 @@ cli.disable = <span class="fstat-no" title="function not covered" >function (/*p
  * @api public
  */
 cli.setArgv = function (arr, keep_arg0) {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof arr == 'string') {
-<span class="cstat-no" title="statement not covered" >      arr = arr.split(' ');</span>
+    <span class="missing-if-branch" title="if path not taken">I</span>if (typeof arr == 'string') {
+<span class="cstat-no" title="statement not covered">      arr = arr.split(' ');</span>
     } else {
       arr = arr.slice();
     }
@@ -2582,9 +2580,9 @@ cli.setArgv = function (arr, keep_arg0) {
     // So this is still broken and will break if you are calling node through a
     // symlink, unless you are lucky enough to have it as 'node' literal. Latter
     // is a hack, but resolving abspaths/symlinks is an unportable can of worms.
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (!keep_arg0 &amp;&amp; (['node', 'node.exe'].indexOf(cli.native.path.basename(cli.app)) !== -1
-            || <span class="branch-2 cbranch-no" title="branch not covered" >cli.native.path.basename(process.execPath) === cli.app</span>
-            || <span class="branch-3 cbranch-no" title="branch not covered" >process.execPath === cli.app)</span>) {
+    <span class="missing-if-branch" title="else path not taken">E</span>if (!keep_arg0 &amp;&amp; (['node', 'node.exe'].indexOf(cli.native.path.basename(cli.app)) !== -1
+            || <span class="branch-2 cbranch-no" title="branch not covered">cli.native.path.basename(process.execPath) === cli.app</span>
+            || <span class="branch-3 cbranch-no" title="branch not covered">process.execPath === cli.app)</span>) {
         cli.app = arr.shift();
     }
     cli.app = cli.native.path.basename(cli.app);
@@ -2602,73 +2600,73 @@ cli.setArgv(process.argv);
  * @return {String} opt
  * @api public
  */
-cli.next = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >    if (!argv_parsed) {</span>
-<span class="cstat-no" title="statement not covered" >        cli.args = [];</span>
-<span class="cstat-no" title="statement not covered" >        argv_parsed = true;</span>
+cli.next = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">    if (!argv_parsed) {</span>
+<span class="cstat-no" title="statement not covered">        cli.args = [];</span>
+<span class="cstat-no" title="statement not covered">        argv_parsed = true;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    curr_val = null;</span>
+<span class="cstat-no" title="statement not covered">    curr_val = null;</span>
 &nbsp;
     //If we're currently in a group of short opts (e.g. -abc), return the next opt
-<span class="cstat-no" title="statement not covered" >    if (short_tags.length) {</span>
-<span class="cstat-no" title="statement not covered" >        curr_opt = short_tags.shift();</span>
-<span class="cstat-no" title="statement not covered" >        full_opt = '-' + curr_opt;</span>
-<span class="cstat-no" title="statement not covered" >        return curr_opt;</span>
+<span class="cstat-no" title="statement not covered">    if (short_tags.length) {</span>
+<span class="cstat-no" title="statement not covered">        curr_opt = short_tags.shift();</span>
+<span class="cstat-no" title="statement not covered">        full_opt = '-' + curr_opt;</span>
+<span class="cstat-no" title="statement not covered">        return curr_opt;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!argv.length) {</span>
-<span class="cstat-no" title="statement not covered" >        return false;</span>
+<span class="cstat-no" title="statement not covered">    if (!argv.length) {</span>
+<span class="cstat-no" title="statement not covered">        return false;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    curr_opt = argv.shift();</span>
+<span class="cstat-no" title="statement not covered">    curr_opt = argv.shift();</span>
 &nbsp;
     //If an escape sequence is found (- or --), subsequent opts are ignored
-<span class="cstat-no" title="statement not covered" >    if (curr_opt === '-' || curr_opt === '--') {</span>
-<span class="cstat-no" title="statement not covered" >        while (argv.length) {</span>
-<span class="cstat-no" title="statement not covered" >            cli.args.push(argv.shift());</span>
+<span class="cstat-no" title="statement not covered">    if (curr_opt === '-' || curr_opt === '--') {</span>
+<span class="cstat-no" title="statement not covered">        while (argv.length) {</span>
+<span class="cstat-no" title="statement not covered">            cli.args.push(argv.shift());</span>
         }
-<span class="cstat-no" title="statement not covered" >        return false;</span>
+<span class="cstat-no" title="statement not covered">        return false;</span>
     }
 &nbsp;
     //If the next element in argv isn't an opt, add it to the list of args
-<span class="cstat-no" title="statement not covered" >    if (curr_opt[0] !== '-') {</span>
-<span class="cstat-no" title="statement not covered" >        cli.args.push(curr_opt);</span>
-<span class="cstat-no" title="statement not covered" >        return cli.next();</span>
+<span class="cstat-no" title="statement not covered">    if (curr_opt[0] !== '-') {</span>
+<span class="cstat-no" title="statement not covered">        cli.args.push(curr_opt);</span>
+<span class="cstat-no" title="statement not covered">        return cli.next();</span>
     } else {
         //Check if the opt is short/long
-<span class="cstat-no" title="statement not covered" >        is_long = curr_opt[1] === '-';</span>
-<span class="cstat-no" title="statement not covered" >        curr_opt = curr_opt.substr(is_long ? 2 : 1);</span>
+<span class="cstat-no" title="statement not covered">        is_long = curr_opt[1] === '-';</span>
+<span class="cstat-no" title="statement not covered">        curr_opt = curr_opt.substr(is_long ? 2 : 1);</span>
     }
 &nbsp;
     //Accept grouped short opts, e.g. -abc =&gt; -a -b -c
-<span class="cstat-no" title="statement not covered" >    if (!is_long &amp;&amp; curr_opt.length &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered" >        short_tags = curr_opt.split('');</span>
-<span class="cstat-no" title="statement not covered" >        return cli.next();</span>
+<span class="cstat-no" title="statement not covered">    if (!is_long &amp;&amp; curr_opt.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered">        short_tags = curr_opt.split('');</span>
+<span class="cstat-no" title="statement not covered">        return cli.next();</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var eq, len;</span>
+<span class="cstat-no" title="statement not covered">    var eq, len;</span>
 &nbsp;
     //Check if the long opt is in the form --option=VALUE
-<span class="cstat-no" title="statement not covered" >    if (is_long &amp;&amp; (eq = curr_opt.indexOf('=')) &gt;= 0) {</span>
-<span class="cstat-no" title="statement not covered" >        curr_val = curr_opt.substr(eq + 1);</span>
-<span class="cstat-no" title="statement not covered" >        curr_opt = curr_opt.substr(0, eq);</span>
-<span class="cstat-no" title="statement not covered" >        len = curr_val.length;</span>
+<span class="cstat-no" title="statement not covered">    if (is_long &amp;&amp; (eq = curr_opt.indexOf('=')) &gt;= 0) {</span>
+<span class="cstat-no" title="statement not covered">        curr_val = curr_opt.substr(eq + 1);</span>
+<span class="cstat-no" title="statement not covered">        curr_opt = curr_opt.substr(0, eq);</span>
+<span class="cstat-no" title="statement not covered">        len = curr_val.length;</span>
         //Allow values to be quoted
-<span class="cstat-no" title="statement not covered" >        if ((curr_val[0] === '"' &amp;&amp; curr_val[len - 1] === '"') ||</span>
+<span class="cstat-no" title="statement not covered">        if ((curr_val[0] === '"' &amp;&amp; curr_val[len - 1] === '"') ||</span>
             (curr_val[0] === "'" &amp;&amp; curr_val[len - 1] === "'"))
         {
-<span class="cstat-no" title="statement not covered" >            curr_val = curr_val.substr(1, len-2);</span>
+<span class="cstat-no" title="statement not covered">            curr_val = curr_val.substr(1, len-2);</span>
         }
-<span class="cstat-no" title="statement not covered" >        if (curr_val.match(/^[0-9]+$/)) {</span>
-<span class="cstat-no" title="statement not covered" >            curr_val = parseInt(curr_val, 10);</span>
+<span class="cstat-no" title="statement not covered">        if (curr_val.match(/^[0-9]+$/)) {</span>
+<span class="cstat-no" title="statement not covered">            curr_val = parseInt(curr_val, 10);</span>
         }
     }
 &nbsp;
     //Save the opt representation for later
-<span class="cstat-no" title="statement not covered" >    full_opt = (is_long ? '--' : '-') + curr_opt;</span>
+<span class="cstat-no" title="statement not covered">    full_opt = (is_long ? '--' : '-') + curr_opt;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return curr_opt;</span>
+<span class="cstat-no" title="statement not covered">    return curr_opt;</span>
 };
 &nbsp;
 /**
@@ -2689,140 +2687,140 @@ cli.next = <span class="fstat-no" title="function not covered" >function () {</s
  * @return {Object} opts (parsed)
  * @api public
  */
-cli.parse = <span class="fstat-no" title="function not covered" >function (opts, command_def) {</span>
-<span class="cstat-no" title="statement not covered" >    var default_val, i, o, parsed = cli.options, seen,</span>
+cli.parse = <span class="fstat-no" title="function not covered">function (opts, command_def) {</span>
+<span class="cstat-no" title="statement not covered">    var default_val, i, o, parsed = cli.options, seen,</span>
         catch_all = !opts;
-<span class="cstat-no" title="statement not covered" >    opt_list = opts || {};</span>
-<span class="cstat-no" title="statement not covered" >    commands = command_def;</span>
-<span class="cstat-no" title="statement not covered" >    command_list = commands || [];</span>
-<span class="cstat-no" title="statement not covered" >    if (commands &amp;&amp; !Array.isArray(commands)) {</span>
-<span class="cstat-no" title="statement not covered" >        command_list = Object.keys(commands);</span>
+<span class="cstat-no" title="statement not covered">    opt_list = opts || {};</span>
+<span class="cstat-no" title="statement not covered">    commands = command_def;</span>
+<span class="cstat-no" title="statement not covered">    command_list = commands || [];</span>
+<span class="cstat-no" title="statement not covered">    if (commands &amp;&amp; !Array.isArray(commands)) {</span>
+<span class="cstat-no" title="statement not covered">        command_list = Object.keys(commands);</span>
     }
-<span class="cstat-no" title="statement not covered" >    while ((o = cli.next())) {</span>
-<span class="cstat-no" title="statement not covered" >        seen = false;</span>
-<span class="cstat-no" title="statement not covered" >        for (var opt in opt_list) {</span>
-<span class="cstat-no" title="statement not covered" >            if (!(opt_list[opt] instanceof Array)) {</span>
-<span class="cstat-no" title="statement not covered" >                continue;</span>
+<span class="cstat-no" title="statement not covered">    while ((o = cli.next())) {</span>
+<span class="cstat-no" title="statement not covered">        seen = false;</span>
+<span class="cstat-no" title="statement not covered">        for (var opt in opt_list) {</span>
+<span class="cstat-no" title="statement not covered">            if (!(opt_list[opt] instanceof Array)) {</span>
+<span class="cstat-no" title="statement not covered">                continue;</span>
             }
-<span class="cstat-no" title="statement not covered" >            if (!opt_list[opt][0]) {</span>
-<span class="cstat-no" title="statement not covered" >                opt_list[opt][0] = opt;</span>
+<span class="cstat-no" title="statement not covered">            if (!opt_list[opt][0]) {</span>
+<span class="cstat-no" title="statement not covered">                opt_list[opt][0] = opt;</span>
             }
-<span class="cstat-no" title="statement not covered" >            if (o === opt || o === opt_list[opt][0]) {</span>
-<span class="cstat-no" title="statement not covered" >                seen = true;</span>
-<span class="cstat-no" title="statement not covered" >                if (opt_list[opt].length === 2) {</span>
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = true;</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">            if (o === opt || o === opt_list[opt][0]) {</span>
+<span class="cstat-no" title="statement not covered">                seen = true;</span>
+<span class="cstat-no" title="statement not covered">                if (opt_list[opt].length === 2) {</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = true;</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 }
-<span class="cstat-no" title="statement not covered" >                default_val = null;</span>
-<span class="cstat-no" title="statement not covered" >                if (opt_list[opt].length === 4) {</span>
-<span class="cstat-no" title="statement not covered" >                    default_val = opt_list[opt][3];</span>
+<span class="cstat-no" title="statement not covered">                default_val = null;</span>
+<span class="cstat-no" title="statement not covered">                if (opt_list[opt].length === 4) {</span>
+<span class="cstat-no" title="statement not covered">                    default_val = opt_list[opt][3];</span>
                 }
-<span class="cstat-no" title="statement not covered" >                if (opt_list[opt][2] instanceof Array) {</span>
-<span class="cstat-no" title="statement not covered" >                    for (i = 0, l = opt_list[opt][2].length; i &lt; l; i++) {</span>
-<span class="cstat-no" title="statement not covered" >                        if (typeof opt_list[opt][2][i] === 'number') {</span>
-<span class="cstat-no" title="statement not covered" >                            opt_list[opt][2][i] += '';</span>
+<span class="cstat-no" title="statement not covered">                if (opt_list[opt][2] instanceof Array) {</span>
+<span class="cstat-no" title="statement not covered">                    for (i = 0, l = opt_list[opt][2].length; i &lt; l; i++) {</span>
+<span class="cstat-no" title="statement not covered">                        if (typeof opt_list[opt][2][i] === 'number') {</span>
+<span class="cstat-no" title="statement not covered">                            opt_list[opt][2][i] += '';</span>
                         }
                     }
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = cli.getArrayValue(opt_list[opt][2], is_long ? null : default_val);</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = cli.getArrayValue(opt_list[opt][2], is_long ? null : default_val);</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 }
-<span class="cstat-no" title="statement not covered" >                if (opt_list[opt][2].toLowerCase) {</span>
-<span class="cstat-no" title="statement not covered" >                    opt_list[opt][2] = opt_list[opt][2].toLowerCase();</span>
+<span class="cstat-no" title="statement not covered">                if (opt_list[opt][2].toLowerCase) {</span>
+<span class="cstat-no" title="statement not covered">                    opt_list[opt][2] = opt_list[opt][2].toLowerCase();</span>
                 }
-<span class="cstat-no" title="statement not covered" >                switch (opt_list[opt][2]) {</span>
+<span class="cstat-no" title="statement not covered">                switch (opt_list[opt][2]) {</span>
                 case 'string': case 1: case true:
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = cli.getValue(default_val);</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = cli.getValue(default_val);</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 case 'int': case 'number': case 'num':
                 case 'time': case 'seconds': case 'secs': case 'minutes': case 'mins':
                 case 'x': case 'n':
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = cli.getInt(default_val);</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = cli.getInt(default_val);</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 case 'date': case 'datetime': case 'date_time':
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = cli.getDate(default_val);</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = cli.getDate(default_val);</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 case 'float': case 'decimal':
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = cli.getFloat(default_val);</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = cli.getFloat(default_val);</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 case 'path': case 'file': case 'directory': case 'dir':
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = cli.getPath(default_val, opt_list[opt][2]);</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = cli.getPath(default_val, opt_list[opt][2]);</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 case 'email':
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = cli.getEmail(default_val);</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = cli.getEmail(default_val);</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 case 'url': case 'uri': case 'domain': case 'host':
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = cli.getUrl(default_val, opt_list[opt][2]);</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = cli.getUrl(default_val, opt_list[opt][2]);</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 case 'ip':
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = cli.getIp(default_val);</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = cli.getIp(default_val);</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 case 'bool': case 'boolean': case 'on':
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = true;</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = true;</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 case 'false': case 'off': case false: case 0:
-<span class="cstat-no" title="statement not covered" >                    parsed[opt] = false;</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
+<span class="cstat-no" title="statement not covered">                    parsed[opt] = false;</span>
+<span class="cstat-no" title="statement not covered">                    break;</span>
                 default:
-<span class="cstat-no" title="statement not covered" >                     cli.fatal('Unknown opt type "' + opt_list[opt][2] + '"');</span>
+<span class="cstat-no" title="statement not covered">                     cli.fatal('Unknown opt type "' + opt_list[opt][2] + '"');</span>
                 }
-<span class="cstat-no" title="statement not covered" >                break;</span>
+<span class="cstat-no" title="statement not covered">                break;</span>
             }
         }
-<span class="cstat-no" title="statement not covered" >        if (!seen) {</span>
-<span class="cstat-no" title="statement not covered" >            if (enable.help &amp;&amp; (o === 'h' || o === 'help')) {</span>
-<span class="cstat-no" title="statement not covered" >                cli.getUsage();</span>
-            } else <span class="cstat-no" title="statement not covered" >if (enable.version &amp;&amp; (o === 'v' || o === 'version')) {</span>
-<span class="cstat-no" title="statement not covered" >                if (cli.version == null) {</span>
-<span class="cstat-no" title="statement not covered" >                    cli.parsePackageJson();</span>
+<span class="cstat-no" title="statement not covered">        if (!seen) {</span>
+<span class="cstat-no" title="statement not covered">            if (enable.help &amp;&amp; (o === 'h' || o === 'help')) {</span>
+<span class="cstat-no" title="statement not covered">                cli.getUsage();</span>
+            } else <span class="cstat-no" title="statement not covered">if (enable.version &amp;&amp; (o === 'v' || o === 'version')) {</span>
+<span class="cstat-no" title="statement not covered">                if (cli.version == null) {</span>
+<span class="cstat-no" title="statement not covered">                    cli.parsePackageJson();</span>
                 }
-<span class="cstat-no" title="statement not covered" >                console.error(cli.app + ' v' + cli.version);</span>
-<span class="cstat-no" title="statement not covered" >                cli.exit();</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
-            } else <span class="cstat-no" title="statement not covered" >if (enable.catchall &amp;&amp; (o === 'c' || o === 'catch')) {</span>
-<span class="cstat-no" title="statement not covered" >                continue;</span>
-            } else <span class="cstat-no" title="statement not covered" >if (enable.status &amp;&amp; (o === 'k' || o === 'no-color')) {</span>
-<span class="cstat-no" title="statement not covered" >                cli.no_color = (o === 'k' || o === 'no-color');</span>
-<span class="cstat-no" title="statement not covered" >                continue;</span>
-            } else <span class="cstat-no" title="statement not covered" >if (enable.status &amp;&amp; (o === 'debug')) {</span>
-<span class="cstat-no" title="statement not covered" >                show_debug = o === 'debug';</span>
-<span class="cstat-no" title="statement not covered" >                continue;</span>
-            } else <span class="cstat-no" title="statement not covered" >if (enable.timeout &amp;&amp; (o === 't' || o === 'timeout')) {</span>
-<span class="cstat-no" title="statement not covered" >                var secs = cli.getInt();</span>
-<span class="cstat-no" title="statement not covered" >                setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >                    cli.fatal('Process timed out after ' + secs + 's');</span>
+<span class="cstat-no" title="statement not covered">                console.error(cli.app + ' v' + cli.version);</span>
+<span class="cstat-no" title="statement not covered">                cli.exit();</span>
+<span class="cstat-no" title="statement not covered">                break;</span>
+            } else <span class="cstat-no" title="statement not covered">if (enable.catchall &amp;&amp; (o === 'c' || o === 'catch')) {</span>
+<span class="cstat-no" title="statement not covered">                continue;</span>
+            } else <span class="cstat-no" title="statement not covered">if (enable.status &amp;&amp; (o === 'k' || o === 'no-color')) {</span>
+<span class="cstat-no" title="statement not covered">                cli.no_color = (o === 'k' || o === 'no-color');</span>
+<span class="cstat-no" title="statement not covered">                continue;</span>
+            } else <span class="cstat-no" title="statement not covered">if (enable.status &amp;&amp; (o === 'debug')) {</span>
+<span class="cstat-no" title="statement not covered">                show_debug = o === 'debug';</span>
+<span class="cstat-no" title="statement not covered">                continue;</span>
+            } else <span class="cstat-no" title="statement not covered">if (enable.timeout &amp;&amp; (o === 't' || o === 'timeout')) {</span>
+<span class="cstat-no" title="statement not covered">                var secs = cli.getInt();</span>
+<span class="cstat-no" title="statement not covered">                setTimeout(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                    cli.fatal('Process timed out after ' + secs + 's');</span>
                 }, secs * 1000);
-<span class="cstat-no" title="statement not covered" >                continue;</span>
-            } else <span class="cstat-no" title="statement not covered" >if (catch_all) {</span>
-<span class="cstat-no" title="statement not covered" >                parsed[o] = curr_val || true;</span>
-<span class="cstat-no" title="statement not covered" >                continue;</span>
+<span class="cstat-no" title="statement not covered">                continue;</span>
+            } else <span class="cstat-no" title="statement not covered">if (catch_all) {</span>
+<span class="cstat-no" title="statement not covered">                parsed[o] = curr_val || true;</span>
+<span class="cstat-no" title="statement not covered">                continue;</span>
             }
-<span class="cstat-no" title="statement not covered" >            cli.fatal('Unknown option ' + full_opt);</span>
+<span class="cstat-no" title="statement not covered">            cli.fatal('Unknown option ' + full_opt);</span>
         }
     }
     //Fill the remaining options with their default value or null
-<span class="cstat-no" title="statement not covered" >    for (var opt in opt_list) {</span>
-<span class="cstat-no" title="statement not covered" >        default_val = opt_list[opt].length === 4 ? opt_list[opt][3] : null;</span>
-<span class="cstat-no" title="statement not covered" >        if (!(opt_list[opt] instanceof Array)) {</span>
-<span class="cstat-no" title="statement not covered" >            parsed[opt] = opt_list[opt];</span>
-<span class="cstat-no" title="statement not covered" >            continue;</span>
-        } else <span class="cstat-no" title="statement not covered" >if (typeof parsed[opt] === 'undefined') {</span>
-<span class="cstat-no" title="statement not covered" >            parsed[opt] = default_val;</span>
+<span class="cstat-no" title="statement not covered">    for (var opt in opt_list) {</span>
+<span class="cstat-no" title="statement not covered">        default_val = opt_list[opt].length === 4 ? opt_list[opt][3] : null;</span>
+<span class="cstat-no" title="statement not covered">        if (!(opt_list[opt] instanceof Array)) {</span>
+<span class="cstat-no" title="statement not covered">            parsed[opt] = opt_list[opt];</span>
+<span class="cstat-no" title="statement not covered">            continue;</span>
+        } else <span class="cstat-no" title="statement not covered">if (typeof parsed[opt] === 'undefined') {</span>
+<span class="cstat-no" title="statement not covered">            parsed[opt] = default_val;</span>
         }
     }
-<span class="cstat-no" title="statement not covered" >    if (command_list.length) {</span>
-<span class="cstat-no" title="statement not covered" >        if (cli.args.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >            if (enable.help) {</span>
-<span class="cstat-no" title="statement not covered" >                cli.getUsage();</span>
+<span class="cstat-no" title="statement not covered">    if (command_list.length) {</span>
+<span class="cstat-no" title="statement not covered">        if (cli.args.length === 0) {</span>
+<span class="cstat-no" title="statement not covered">            if (enable.help) {</span>
+<span class="cstat-no" title="statement not covered">                cli.getUsage();</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                cli.fatal('A command is required (' + command_list.join(', ') + ').');</span>
+<span class="cstat-no" title="statement not covered">                cli.fatal('A command is required (' + command_list.join(', ') + ').');</span>
             }
-<span class="cstat-no" title="statement not covered" >            return cli.exit(1);</span>
+<span class="cstat-no" title="statement not covered">            return cli.exit(1);</span>
         } else {
-<span class="cstat-no" title="statement not covered" >            cli.command = cli.autocompleteCommand(cli.args.shift());</span>
+<span class="cstat-no" title="statement not covered">            cli.command = cli.autocompleteCommand(cli.args.shift());</span>
         }
     }
-<span class="cstat-no" title="statement not covered" >    cli.argc = cli.args.length;</span>
-<span class="cstat-no" title="statement not covered" >    return parsed;</span>
+<span class="cstat-no" title="statement not covered">    cli.argc = cli.args.length;</span>
+<span class="cstat-no" title="statement not covered">    return parsed;</span>
 };
 &nbsp;
 /**
@@ -2832,34 +2830,34 @@ cli.parse = <span class="fstat-no" title="function not covered" >function (opts,
  * @return {String} full_command
  * @api public
  */
-cli.autocompleteCommand = <span class="fstat-no" title="function not covered" >function (command) {</span>
-<span class="cstat-no" title="statement not covered" >    var list;</span>
-<span class="cstat-no" title="statement not covered" >    if (!(command_list instanceof Array)) {</span>
-<span class="cstat-no" title="statement not covered" >        list = Object.keys(command_list);</span>
+cli.autocompleteCommand = <span class="fstat-no" title="function not covered">function (command) {</span>
+<span class="cstat-no" title="statement not covered">    var list;</span>
+<span class="cstat-no" title="statement not covered">    if (!(command_list instanceof Array)) {</span>
+<span class="cstat-no" title="statement not covered">        list = Object.keys(command_list);</span>
     } else {
-<span class="cstat-no" title="statement not covered" >        list = command_list;</span>
+<span class="cstat-no" title="statement not covered">        list = command_list;</span>
     }
-<span class="cstat-no" title="statement not covered" >    var i, j = 0, c = command.length, tmp_list;</span>
-<span class="cstat-no" title="statement not covered" >    if (list.length === 0 || list.indexOf(command) !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >        return command;</span>
+<span class="cstat-no" title="statement not covered">    var i, j = 0, c = command.length, tmp_list;</span>
+<span class="cstat-no" title="statement not covered">    if (list.length === 0 || list.indexOf(command) !== -1) {</span>
+<span class="cstat-no" title="statement not covered">        return command;</span>
     }
-<span class="cstat-no" title="statement not covered" >    for (i = 0; i &lt; c; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        tmp_list = [];</span>
-<span class="cstat-no" title="statement not covered" >        l = list.length;</span>
-<span class="cstat-no" title="statement not covered" >        if (l &lt;= 1) <span class="cstat-no" title="statement not covered" >break;</span></span>
-<span class="cstat-no" title="statement not covered" >        for (j = 0; j &lt; l; j++)</span>
-<span class="cstat-no" title="statement not covered" >            if (list[j].length &gt;= i &amp;&amp; list[j][i] === command[i])</span>
-<span class="cstat-no" title="statement not covered" >                tmp_list.push(list[j]);</span>
-<span class="cstat-no" title="statement not covered" >        list = tmp_list;</span>
+<span class="cstat-no" title="statement not covered">    for (i = 0; i &lt; c; i++) {</span>
+<span class="cstat-no" title="statement not covered">        tmp_list = [];</span>
+<span class="cstat-no" title="statement not covered">        l = list.length;</span>
+<span class="cstat-no" title="statement not covered">        if (l &lt;= 1) <span class="cstat-no" title="statement not covered">break;</span></span>
+<span class="cstat-no" title="statement not covered">        for (j = 0; j &lt; l; j++)</span>
+<span class="cstat-no" title="statement not covered">            if (list[j].length &gt;= i &amp;&amp; list[j][i] === command[i])</span>
+<span class="cstat-no" title="statement not covered">                tmp_list.push(list[j]);</span>
+<span class="cstat-no" title="statement not covered">        list = tmp_list;</span>
     }
-<span class="cstat-no" title="statement not covered" >    l = list.length;</span>
-<span class="cstat-no" title="statement not covered" >    if (l === 1) {</span>
-<span class="cstat-no" title="statement not covered" >        return list[0];</span>
-    } else <span class="cstat-no" title="statement not covered" >if (l === 0) {</span>
-<span class="cstat-no" title="statement not covered" >        cli.fatal('Unknown command "' + command + '"' + (enable.help ? '. Please see --help for more information' : ''));</span>
+<span class="cstat-no" title="statement not covered">    l = list.length;</span>
+<span class="cstat-no" title="statement not covered">    if (l === 1) {</span>
+<span class="cstat-no" title="statement not covered">        return list[0];</span>
+    } else <span class="cstat-no" title="statement not covered">if (l === 0) {</span>
+<span class="cstat-no" title="statement not covered">        cli.fatal('Unknown command "' + command + '"' + (enable.help ? '. Please see --help for more information' : ''));</span>
     } else {
-<span class="cstat-no" title="statement not covered" >        list.sort();</span>
-<span class="cstat-no" title="statement not covered" >        cli.fatal('The command "' + command + '" is ambiguous and could mean "' + list.join('", "') + '"');</span>
+<span class="cstat-no" title="statement not covered">        list.sort();</span>
+<span class="cstat-no" title="statement not covered">        cli.fatal('The command "' + command + '" is ambiguous and could mean "' + list.join('", "') + '"');</span>
     }
 };
 &nbsp;
@@ -2876,36 +2874,36 @@ cli.autocompleteCommand = <span class="fstat-no" title="function not covered" >f
  *
  * @api private
  */
-cli.status = <span class="fstat-no" title="function not covered" >function (msg, type) {</span>
-<span class="cstat-no" title="statement not covered" >    var pre;</span>
-<span class="cstat-no" title="statement not covered" >    switch (type) {</span>
+cli.status = <span class="fstat-no" title="function not covered">function (msg, type) {</span>
+<span class="cstat-no" title="statement not covered">    var pre;</span>
+<span class="cstat-no" title="statement not covered">    switch (type) {</span>
     case 'info':
-<span class="cstat-no" title="statement not covered" >        pre = cli.no_color ? 'INFO:' : '\x1B[33mINFO\x1B[0m:';</span>
-<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered">        pre = cli.no_color ? 'INFO:' : '\x1B[33mINFO\x1B[0m:';</span>
+<span class="cstat-no" title="statement not covered">        break;</span>
     case 'debug':
-<span class="cstat-no" title="statement not covered" >        pre = cli.no_color ? 'DEBUG:' : '\x1B[36mDEBUG\x1B[0m:';</span>
-<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered">        pre = cli.no_color ? 'DEBUG:' : '\x1B[36mDEBUG\x1B[0m:';</span>
+<span class="cstat-no" title="statement not covered">        break;</span>
     case 'error':
     case 'fatal':
-<span class="cstat-no" title="statement not covered" >        pre = cli.no_color ? 'ERROR:' : '\x1B[31mERROR\x1B[0m:';</span>
-<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered">        pre = cli.no_color ? 'ERROR:' : '\x1B[31mERROR\x1B[0m:';</span>
+<span class="cstat-no" title="statement not covered">        break;</span>
     case 'ok':
-<span class="cstat-no" title="statement not covered" >        pre = cli.no_color ? 'OK:' : '\x1B[32mOK\x1B[0m:';</span>
-<span class="cstat-no" title="statement not covered" >        break;</span>
+<span class="cstat-no" title="statement not covered">        pre = cli.no_color ? 'OK:' : '\x1B[32mOK\x1B[0m:';</span>
+<span class="cstat-no" title="statement not covered">        break;</span>
     }
-<span class="cstat-no" title="statement not covered" >    msg = pre + ' ' + msg;</span>
-<span class="cstat-no" title="statement not covered" >    if (type === 'fatal') {</span>
-<span class="cstat-no" title="statement not covered" >        console.error(msg);</span>
-<span class="cstat-no" title="statement not covered" >        return cli.exit(1);</span>
+<span class="cstat-no" title="statement not covered">    msg = pre + ' ' + msg;</span>
+<span class="cstat-no" title="statement not covered">    if (type === 'fatal') {</span>
+<span class="cstat-no" title="statement not covered">        console.error(msg);</span>
+<span class="cstat-no" title="statement not covered">        return cli.exit(1);</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (enable.status &amp;&amp; !show_debug &amp;&amp; type === 'debug') {</span>
-<span class="cstat-no" title="statement not covered" >        return;</span>
+<span class="cstat-no" title="statement not covered">    if (enable.status &amp;&amp; !show_debug &amp;&amp; type === 'debug') {</span>
+<span class="cstat-no" title="statement not covered">        return;</span>
     }
-<span class="cstat-no" title="statement not covered" >    console.error(msg);</span>
+<span class="cstat-no" title="statement not covered">    console.error(msg);</span>
 };
 ['info','error','ok','debug','fatal'].forEach(function (type) {
-    cli[type] = <span class="fstat-no" title="function not covered" >function (msg) {</span>
-<span class="cstat-no" title="statement not covered" >        cli.status(msg, type);</span>
+    cli[type] = <span class="fstat-no" title="function not covered">function (msg) {</span>
+<span class="cstat-no" title="statement not covered">        cli.status(msg, type);</span>
     };
 });
 &nbsp;
@@ -2920,14 +2918,14 @@ cli.status = <span class="fstat-no" title="function not covered" >function (msg,
  * @return cli (for chaining)
  * @api public
  */
-cli.setApp = <span class="fstat-no" title="function not covered" >function (name, version) {</span>
-<span class="cstat-no" title="statement not covered" >    if (name.indexOf('package.json') !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >        cli.parsePackageJson(name);</span>
+cli.setApp = <span class="fstat-no" title="function not covered">function (name, version) {</span>
+<span class="cstat-no" title="statement not covered">    if (name.indexOf('package.json') !== -1) {</span>
+<span class="cstat-no" title="statement not covered">        cli.parsePackageJson(name);</span>
     } else {
-<span class="cstat-no" title="statement not covered" >        cli.app = name;</span>
-<span class="cstat-no" title="statement not covered" >        cli.version = version;</span>
+<span class="cstat-no" title="statement not covered">        cli.app = name;</span>
+<span class="cstat-no" title="statement not covered">        cli.version = version;</span>
     }
-<span class="cstat-no" title="statement not covered" >    return cli;</span>
+<span class="cstat-no" title="statement not covered">    return cli;</span>
 };
 &nbsp;
 /**
@@ -2937,35 +2935,35 @@ cli.setApp = <span class="fstat-no" title="function not covered" >function (name
  * @param {String} path (optional)
  * @api public
  */
-cli.parsePackageJson = <span class="fstat-no" title="function not covered" >function (path) {</span>
-<span class="cstat-no" title="statement not covered" >    var parse_packagejson = <span class="fstat-no" title="function not covered" >function (path) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var packagejson = JSON.parse(cli.native.fs.readFileSync(path, 'utf8'));</span>
-<span class="cstat-no" title="statement not covered" >        cli.version = packagejson.version;</span>
-<span class="cstat-no" title="statement not covered" >        cli.app = packagejson.name;</span>
+cli.parsePackageJson = <span class="fstat-no" title="function not covered">function (path) {</span>
+<span class="cstat-no" title="statement not covered">    var parse_packagejson = <span class="fstat-no" title="function not covered">function (path) {</span></span>
+<span class="cstat-no" title="statement not covered">        var packagejson = JSON.parse(cli.native.fs.readFileSync(path, 'utf8'));</span>
+<span class="cstat-no" title="statement not covered">        cli.version = packagejson.version;</span>
+<span class="cstat-no" title="statement not covered">        cli.app = packagejson.name;</span>
     };
-<span class="cstat-no" title="statement not covered" >    var try_all = <span class="fstat-no" title="function not covered" >function (arr, func, err) {</span></span>
-<span class="cstat-no" title="statement not covered" >        for (var i = 0, l = arr.length; i &lt; l; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            try {</span>
-<span class="cstat-no" title="statement not covered" >                func(arr[i]);</span>
-<span class="cstat-no" title="statement not covered" >                return;</span>
+<span class="cstat-no" title="statement not covered">    var try_all = <span class="fstat-no" title="function not covered">function (arr, func, err) {</span></span>
+<span class="cstat-no" title="statement not covered">        for (var i = 0, l = arr.length; i &lt; l; i++) {</span>
+<span class="cstat-no" title="statement not covered">            try {</span>
+<span class="cstat-no" title="statement not covered">                func(arr[i]);</span>
+<span class="cstat-no" title="statement not covered">                return;</span>
             } catch (e) {
-<span class="cstat-no" title="statement not covered" >                if (i === l-1) {</span>
-<span class="cstat-no" title="statement not covered" >                    cli.fatal(err);</span>
+<span class="cstat-no" title="statement not covered">                if (i === l-1) {</span>
+<span class="cstat-no" title="statement not covered">                    cli.fatal(err);</span>
                 }
             }
         }
     };
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        if (path) {</span>
-<span class="cstat-no" title="statement not covered" >            return parse_packagejson(path);</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">        if (path) {</span>
+<span class="cstat-no" title="statement not covered">            return parse_packagejson(path);</span>
         }
-<span class="cstat-no" title="statement not covered" >        try_all([</span>
+<span class="cstat-no" title="statement not covered">        try_all([</span>
             __dirname + '/package.json',
             __dirname + '/../package.json',
             __dirname + '/../../package.json'
         ], parse_packagejson);
     } catch (e) {
-<span class="cstat-no" title="statement not covered" >        cli.fatal('Could not detect ' + cli.app + ' version');</span>
+<span class="cstat-no" title="statement not covered">        cli.fatal('Could not detect ' + cli.app + ' version');</span>
     }
 };
 &nbsp;
@@ -2976,21 +2974,21 @@ cli.parsePackageJson = <span class="fstat-no" title="function not covered" >func
  * @return cli (for chaining)
  * @api public
  */
-cli.setUsage = <span class="fstat-no" title="function not covered" >function (u) {</span>
-<span class="cstat-no" title="statement not covered" >    usage = u;</span>
-<span class="cstat-no" title="statement not covered" >    return cli;</span>
+cli.setUsage = <span class="fstat-no" title="function not covered">function (u) {</span>
+<span class="cstat-no" title="statement not covered">    usage = u;</span>
+<span class="cstat-no" title="statement not covered">    return cli;</span>
 };
 &nbsp;
-var pad = <span class="fstat-no" title="function not covered" >function (str, len) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof len === 'undefined') {</span>
-<span class="cstat-no" title="statement not covered" >        len = str;</span>
-<span class="cstat-no" title="statement not covered" >        str = '';</span>
+var pad = <span class="fstat-no" title="function not covered">function (str, len) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof len === 'undefined') {</span>
+<span class="cstat-no" title="statement not covered">        len = str;</span>
+<span class="cstat-no" title="statement not covered">        str = '';</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (str.length &lt; len) {</span>
-<span class="cstat-no" title="statement not covered" >        len -= str.length;</span>
-<span class="cstat-no" title="statement not covered" >        while (len--) <span class="cstat-no" title="statement not covered" >str += ' ';</span></span>
+<span class="cstat-no" title="statement not covered">    if (str.length &lt; len) {</span>
+<span class="cstat-no" title="statement not covered">        len -= str.length;</span>
+<span class="cstat-no" title="statement not covered">        while (len--) <span class="cstat-no" title="statement not covered">str += ' ';</span></span>
     }
-<span class="cstat-no" title="statement not covered" >    return str;</span>
+<span class="cstat-no" title="statement not covered">    return str;</span>
 };
 &nbsp;
 /**
@@ -2999,122 +2997,122 @@ var pad = <span class="fstat-no" title="function not covered" >function (str, le
  *
  * @api public
  */
-cli.getUsage = <span class="fstat-no" title="function not covered" >function (code) {</span>
-<span class="cstat-no" title="statement not covered" >    var short, desc, optional, line, seen_opts = [],</span>
+cli.getUsage = <span class="fstat-no" title="function not covered">function (code) {</span>
+<span class="cstat-no" title="statement not covered">    var short, desc, optional, line, seen_opts = [],</span>
         switch_pad = cli.option_width;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var trunc_desc = <span class="fstat-no" title="function not covered" >function (pref, desc, len) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var pref_len = pref.length,</span>
+<span class="cstat-no" title="statement not covered">    var trunc_desc = <span class="fstat-no" title="function not covered">function (pref, desc, len) {</span></span>
+<span class="cstat-no" title="statement not covered">        var pref_len = pref.length,</span>
             desc_len = cli.width - pref_len,
             truncated = '';
-<span class="cstat-no" title="statement not covered" >        if (desc.length &lt;= desc_len) {</span>
-<span class="cstat-no" title="statement not covered" >            return desc;</span>
+<span class="cstat-no" title="statement not covered">        if (desc.length &lt;= desc_len) {</span>
+<span class="cstat-no" title="statement not covered">            return desc;</span>
         }
-<span class="cstat-no" title="statement not covered" >        var desc_words = (desc+'').split(' '), chars = 0, word;</span>
-<span class="cstat-no" title="statement not covered" >        while (desc_words.length) {</span>
-<span class="cstat-no" title="statement not covered" >            truncated += (word = desc_words.shift()) + ' ';</span>
-<span class="cstat-no" title="statement not covered" >            chars += word.length;</span>
-<span class="cstat-no" title="statement not covered" >            if (desc_words.length &amp;&amp; chars + desc_words[0].length &gt; desc_len) {</span>
-<span class="cstat-no" title="statement not covered" >                truncated += '\n' + pad(pref_len);</span>
-<span class="cstat-no" title="statement not covered" >                chars = 0;</span>
+<span class="cstat-no" title="statement not covered">        var desc_words = (desc+'').split(' '), chars = 0, word;</span>
+<span class="cstat-no" title="statement not covered">        while (desc_words.length) {</span>
+<span class="cstat-no" title="statement not covered">            truncated += (word = desc_words.shift()) + ' ';</span>
+<span class="cstat-no" title="statement not covered">            chars += word.length;</span>
+<span class="cstat-no" title="statement not covered">            if (desc_words.length &amp;&amp; chars + desc_words[0].length &gt; desc_len) {</span>
+<span class="cstat-no" title="statement not covered">                truncated += '\n' + pad(pref_len);</span>
+<span class="cstat-no" title="statement not covered">                chars = 0;</span>
             }
         }
-<span class="cstat-no" title="statement not covered" >        return truncated;</span>
+<span class="cstat-no" title="statement not covered">        return truncated;</span>
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    usage = usage || cli.app + ' [OPTIONS]' + (command_list.length ? ' &lt;command&gt;' : '') + ' [ARGS]';</span>
-<span class="cstat-no" title="statement not covered" >    if (cli.no_color) {</span>
-<span class="cstat-no" title="statement not covered" >        console.error('Usage:\n  ' + usage);</span>
-<span class="cstat-no" title="statement not covered" >        console.error('Options: ');</span>
+<span class="cstat-no" title="statement not covered">    usage = usage || cli.app + ' [OPTIONS]' + (command_list.length ? ' &lt;command&gt;' : '') + ' [ARGS]';</span>
+<span class="cstat-no" title="statement not covered">    if (cli.no_color) {</span>
+<span class="cstat-no" title="statement not covered">        console.error('Usage:\n  ' + usage);</span>
+<span class="cstat-no" title="statement not covered">        console.error('Options: ');</span>
     } else {
-<span class="cstat-no" title="statement not covered" >        console.error('\x1b[1mUsage\x1b[0m:\n  ' + usage);</span>
-<span class="cstat-no" title="statement not covered" >        console.error('\n\x1b[1mOptions\x1b[0m: ');</span>
+<span class="cstat-no" title="statement not covered">        console.error('\x1b[1mUsage\x1b[0m:\n  ' + usage);</span>
+<span class="cstat-no" title="statement not covered">        console.error('\n\x1b[1mOptions\x1b[0m: ');</span>
     }
-<span class="cstat-no" title="statement not covered" >    for (var opt in opt_list) {</span>
+<span class="cstat-no" title="statement not covered">    for (var opt in opt_list) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (opt.length === 1) {</span>
-<span class="cstat-no" title="statement not covered" >            long = opt_list[opt][0];</span>
-<span class="cstat-no" title="statement not covered" >            short = opt;</span>
+<span class="cstat-no" title="statement not covered">        if (opt.length === 1) {</span>
+<span class="cstat-no" title="statement not covered">            long = opt_list[opt][0];</span>
+<span class="cstat-no" title="statement not covered">            short = opt;</span>
         } else {
-<span class="cstat-no" title="statement not covered" >            long = opt;</span>
-<span class="cstat-no" title="statement not covered" >            short = opt_list[opt][0];</span>
+<span class="cstat-no" title="statement not covered">            long = opt;</span>
+<span class="cstat-no" title="statement not covered">            short = opt_list[opt][0];</span>
         }
 &nbsp;
         //Parse opt_list
-<span class="cstat-no" title="statement not covered" >        desc = opt_list[opt][1].trim();</span>
-<span class="cstat-no" title="statement not covered" >        type = opt_list[opt].length &gt;= 3 ? opt_list[opt][2] : null;</span>
-<span class="cstat-no" title="statement not covered" >        optional = opt_list[opt].length === 4 ? opt_list[opt][3] : null;</span>
+<span class="cstat-no" title="statement not covered">        desc = opt_list[opt][1].trim();</span>
+<span class="cstat-no" title="statement not covered">        type = opt_list[opt].length &gt;= 3 ? opt_list[opt][2] : null;</span>
+<span class="cstat-no" title="statement not covered">        optional = opt_list[opt].length === 4 ? opt_list[opt][3] : null;</span>
 &nbsp;
         //Build usage line
-<span class="cstat-no" title="statement not covered" >        if (short === long) {</span>
-<span class="cstat-no" title="statement not covered" >            if (short.length === 1) {</span>
-<span class="cstat-no" title="statement not covered" >                line = '  -' + short;</span>
+<span class="cstat-no" title="statement not covered">        if (short === long) {</span>
+<span class="cstat-no" title="statement not covered">            if (short.length === 1) {</span>
+<span class="cstat-no" title="statement not covered">                line = '  -' + short;</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                line = '      --' + long;</span>
+<span class="cstat-no" title="statement not covered">                line = '      --' + long;</span>
             }
-        } else <span class="cstat-no" title="statement not covered" >if (short) {</span>
-<span class="cstat-no" title="statement not covered" >            line = '  -' + short + ', --' + long;</span>
+        } else <span class="cstat-no" title="statement not covered">if (short) {</span>
+<span class="cstat-no" title="statement not covered">            line = '  -' + short + ', --' + long;</span>
         } else {
-<span class="cstat-no" title="statement not covered" >            line = '      --' + long;</span>
+<span class="cstat-no" title="statement not covered">            line = '      --' + long;</span>
         }
-<span class="cstat-no" title="statement not covered" >        line += ' ';</span>
+<span class="cstat-no" title="statement not covered">        line += ' ';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (type) {</span>
-<span class="cstat-no" title="statement not covered" >            if (type instanceof Array) {</span>
-<span class="cstat-no" title="statement not covered" >                desc += '. VALUE must be either [' + type.join('|') + ']';</span>
-<span class="cstat-no" title="statement not covered" >                type = 'VALUE';</span>
+<span class="cstat-no" title="statement not covered">        if (type) {</span>
+<span class="cstat-no" title="statement not covered">            if (type instanceof Array) {</span>
+<span class="cstat-no" title="statement not covered">                desc += '. VALUE must be either [' + type.join('|') + ']';</span>
+<span class="cstat-no" title="statement not covered">                type = 'VALUE';</span>
             }
-<span class="cstat-no" title="statement not covered" >            if (type === true || type === 1) {</span>
-<span class="cstat-no" title="statement not covered" >                type = long.toUpperCase();</span>
+<span class="cstat-no" title="statement not covered">            if (type === true || type === 1) {</span>
+<span class="cstat-no" title="statement not covered">                type = long.toUpperCase();</span>
             }
-<span class="cstat-no" title="statement not covered" >            type = type.toUpperCase();</span>
-<span class="cstat-no" title="statement not covered" >            if (type === 'FLOAT' || type === 'INT') {</span>
-<span class="cstat-no" title="statement not covered" >                type = 'NUMBER';</span>
+<span class="cstat-no" title="statement not covered">            type = type.toUpperCase();</span>
+<span class="cstat-no" title="statement not covered">            if (type === 'FLOAT' || type === 'INT') {</span>
+<span class="cstat-no" title="statement not covered">                type = 'NUMBER';</span>
             }
-<span class="cstat-no" title="statement not covered" >            line += optional ? '[' + type + ']' : type;</span>
+<span class="cstat-no" title="statement not covered">            line += optional ? '[' + type + ']' : type;</span>
         }
-<span class="cstat-no" title="statement not covered" >        line = pad(line, switch_pad);</span>
-<span class="cstat-no" title="statement not covered" >        line += trunc_desc(line, desc);</span>
-<span class="cstat-no" title="statement not covered" >        line += optional ? ' (Default is ' + optional + ')' : '';</span>
-<span class="cstat-no" title="statement not covered" >        console.error(line.replace('%s', '%\0s'));</span>
+<span class="cstat-no" title="statement not covered">        line = pad(line, switch_pad);</span>
+<span class="cstat-no" title="statement not covered">        line += trunc_desc(line, desc);</span>
+<span class="cstat-no" title="statement not covered">        line += optional ? ' (Default is ' + optional + ')' : '';</span>
+<span class="cstat-no" title="statement not covered">        console.error(line.replace('%s', '%\0s'));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        seen_opts.push(short);</span>
-<span class="cstat-no" title="statement not covered" >        seen_opts.push(long);</span>
+<span class="cstat-no" title="statement not covered">        seen_opts.push(short);</span>
+<span class="cstat-no" title="statement not covered">        seen_opts.push(long);</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (enable.timeout &amp;&amp; seen_opts.indexOf('t') === -1 &amp;&amp; seen_opts.indexOf('timeout') === -1) {</span>
-<span class="cstat-no" title="statement not covered" >        console.error(pad('  -t, --timeout N', switch_pad) + 'Exit if the process takes longer than N seconds');</span>
+<span class="cstat-no" title="statement not covered">    if (enable.timeout &amp;&amp; seen_opts.indexOf('t') === -1 &amp;&amp; seen_opts.indexOf('timeout') === -1) {</span>
+<span class="cstat-no" title="statement not covered">        console.error(pad('  -t, --timeout N', switch_pad) + 'Exit if the process takes longer than N seconds');</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (enable.status) {</span>
-<span class="cstat-no" title="statement not covered" >        if (seen_opts.indexOf('k') === -1 &amp;&amp; seen_opts.indexOf('no-color') === -1) {</span>
-<span class="cstat-no" title="statement not covered" >            console.error(pad('  -k, --no-color', switch_pad) + 'Omit color from output');</span>
+<span class="cstat-no" title="statement not covered">    if (enable.status) {</span>
+<span class="cstat-no" title="statement not covered">        if (seen_opts.indexOf('k') === -1 &amp;&amp; seen_opts.indexOf('no-color') === -1) {</span>
+<span class="cstat-no" title="statement not covered">            console.error(pad('  -k, --no-color', switch_pad) + 'Omit color from output');</span>
         }
-<span class="cstat-no" title="statement not covered" >        if (seen_opts.indexOf('debug') === -1) {</span>
-<span class="cstat-no" title="statement not covered" >            console.error(pad('      --debug', switch_pad) + 'Show debug information');</span>
+<span class="cstat-no" title="statement not covered">        if (seen_opts.indexOf('debug') === -1) {</span>
+<span class="cstat-no" title="statement not covered">            console.error(pad('      --debug', switch_pad) + 'Show debug information');</span>
         }
     }
-<span class="cstat-no" title="statement not covered" >    if (enable.catchall &amp;&amp; seen_opts.indexOf('c') === -1 &amp;&amp; seen_opts.indexOf('catch') === -1) {</span>
-<span class="cstat-no" title="statement not covered" >        console.error(pad('  -c, --catch', switch_pad) + 'Catch unanticipated errors');</span>
+<span class="cstat-no" title="statement not covered">    if (enable.catchall &amp;&amp; seen_opts.indexOf('c') === -1 &amp;&amp; seen_opts.indexOf('catch') === -1) {</span>
+<span class="cstat-no" title="statement not covered">        console.error(pad('  -c, --catch', switch_pad) + 'Catch unanticipated errors');</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (enable.version &amp;&amp; seen_opts.indexOf('v') === -1 &amp;&amp; seen_opts.indexOf('version') === -1) {</span>
-<span class="cstat-no" title="statement not covered" >        console.error(pad('  -v, --version', switch_pad) + 'Display the current version');</span>
+<span class="cstat-no" title="statement not covered">    if (enable.version &amp;&amp; seen_opts.indexOf('v') === -1 &amp;&amp; seen_opts.indexOf('version') === -1) {</span>
+<span class="cstat-no" title="statement not covered">        console.error(pad('  -v, --version', switch_pad) + 'Display the current version');</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (enable.help &amp;&amp; seen_opts.indexOf('h') === -1 &amp;&amp; seen_opts.indexOf('help') === -1) {</span>
-<span class="cstat-no" title="statement not covered" >        console.error(pad('  -h, --help', switch_pad) + 'Display help and usage details');</span>
+<span class="cstat-no" title="statement not covered">    if (enable.help &amp;&amp; seen_opts.indexOf('h') === -1 &amp;&amp; seen_opts.indexOf('help') === -1) {</span>
+<span class="cstat-no" title="statement not covered">        console.error(pad('  -h, --help', switch_pad) + 'Display help and usage details');</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (command_list.length) {</span>
-<span class="cstat-no" title="statement not covered" >        console.error('\n\x1b[1mCommands\x1b[0m: ');</span>
-<span class="cstat-no" title="statement not covered" >        if (!Array.isArray(commands)) {</span>
-<span class="cstat-no" title="statement not covered" >            for (var c in commands) {</span>
-<span class="cstat-no" title="statement not covered" >                line = '  ' + pad(c, switch_pad - 2);</span>
-<span class="cstat-no" title="statement not covered" >                line += trunc_desc(line, commands[c]);</span>
-<span class="cstat-no" title="statement not covered" >                console.error(line);</span>
+<span class="cstat-no" title="statement not covered">    if (command_list.length) {</span>
+<span class="cstat-no" title="statement not covered">        console.error('\n\x1b[1mCommands\x1b[0m: ');</span>
+<span class="cstat-no" title="statement not covered">        if (!Array.isArray(commands)) {</span>
+<span class="cstat-no" title="statement not covered">            for (var c in commands) {</span>
+<span class="cstat-no" title="statement not covered">                line = '  ' + pad(c, switch_pad - 2);</span>
+<span class="cstat-no" title="statement not covered">                line += trunc_desc(line, commands[c]);</span>
+<span class="cstat-no" title="statement not covered">                console.error(line);</span>
             }
         } else {
-<span class="cstat-no" title="statement not covered" >            command_list.sort();</span>
-<span class="cstat-no" title="statement not covered" >            console.error('  ' + trunc_desc('  ', command_list.join(', ')));</span>
+<span class="cstat-no" title="statement not covered">            command_list.sort();</span>
+<span class="cstat-no" title="statement not covered">            console.error('  ' + trunc_desc('  ', command_list.join(', ')));</span>
         }
     }
-<span class="cstat-no" title="statement not covered" >    return cli.exit(code);</span>
+<span class="cstat-no" title="statement not covered">    return cli.exit(code);</span>
 };
 &nbsp;
 /**
@@ -3124,10 +3122,10 @@ cli.getUsage = <span class="fstat-no" title="function not covered" >function (co
  * @param {String} type (e.g. 'VALUE')
  * @api public
  */
-cli.getOptError = <span class="fstat-no" title="function not covered" >function (expects, type) {</span>
-<span class="cstat-no" title="statement not covered" >    var err = full_opt + ' expects ' + expects</span>
+cli.getOptError = <span class="fstat-no" title="function not covered">function (expects, type) {</span>
+<span class="cstat-no" title="statement not covered">    var err = full_opt + ' expects ' + expects</span>
             + '. Use `' + cli.app + ' ' + full_opt + (is_long ? '=' : ' ') + type + '`';
-<span class="cstat-no" title="statement not covered" >    return err;</span>
+<span class="cstat-no" title="statement not covered">    return err;</span>
 };
 &nbsp;
 /**
@@ -3140,128 +3138,128 @@ cli.getOptError = <span class="fstat-no" title="function not covered" >function 
  * @param {String} err_msg
  * @api public
  */
-cli.getValue = <span class="fstat-no" title="function not covered" >function (default_val, validate_func, err_msg) {</span>
-<span class="cstat-no" title="statement not covered" >    err_msg = err_msg || cli.getOptError('a value', 'VALUE');</span>
+cli.getValue = <span class="fstat-no" title="function not covered">function (default_val, validate_func, err_msg) {</span>
+<span class="cstat-no" title="statement not covered">    err_msg = err_msg || cli.getOptError('a value', 'VALUE');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var value;</span>
+<span class="cstat-no" title="statement not covered">    var value;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        if (curr_val) {</span>
-<span class="cstat-no" title="statement not covered" >            if (validate_func) {</span>
-<span class="cstat-no" title="statement not covered" >                curr_val = validate_func(curr_val);</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">        if (curr_val) {</span>
+<span class="cstat-no" title="statement not covered">            if (validate_func) {</span>
+<span class="cstat-no" title="statement not covered">                curr_val = validate_func(curr_val);</span>
             }
-<span class="cstat-no" title="statement not covered" >            return curr_val;</span>
+<span class="cstat-no" title="statement not covered">            return curr_val;</span>
         }
 &nbsp;
         //Grouped short opts aren't allowed to have values
-<span class="cstat-no" title="statement not covered" >        if (short_tags.length) {</span>
-<span class="cstat-no" title="statement not covered" >            throw 'Short tags';</span>
+<span class="cstat-no" title="statement not covered">        if (short_tags.length) {</span>
+<span class="cstat-no" title="statement not covered">            throw 'Short tags';</span>
         }
 &nbsp;
         //If there's no args left or the next arg is an opt, return the
         //default value (if specified) - otherwise fail
-<span class="cstat-no" title="statement not covered" >        if (!argv.length || (argv[0].length === 1 &amp;&amp; argv[0][0] === '-')) {</span>
-<span class="cstat-no" title="statement not covered" >            throw 'No value';</span>
+<span class="cstat-no" title="statement not covered">        if (!argv.length || (argv[0].length === 1 &amp;&amp; argv[0][0] === '-')) {</span>
+<span class="cstat-no" title="statement not covered">            throw 'No value';</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        value = argv.shift();</span>
+<span class="cstat-no" title="statement not covered">        value = argv.shift();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (value.match(/^[0-9]+$/)) {</span>
-<span class="cstat-no" title="statement not covered" >            value = parseInt(value, 10);</span>
+<span class="cstat-no" title="statement not covered">        if (value.match(/^[0-9]+$/)) {</span>
+<span class="cstat-no" title="statement not covered">            value = parseInt(value, 10);</span>
         }
 &nbsp;
         //Run the value through a validation/transformation function if specified
-<span class="cstat-no" title="statement not covered" >        if (validate_func) {</span>
-<span class="cstat-no" title="statement not covered" >            value = validate_func(value);</span>
+<span class="cstat-no" title="statement not covered">        if (validate_func) {</span>
+<span class="cstat-no" title="statement not covered">            value = validate_func(value);</span>
         }
     } catch (e) {
 &nbsp;
         //The value didn't pass the validation/transformation. Unshift the value and
         //return the default value (if specified)
-<span class="cstat-no" title="statement not covered" >        if (value) {</span>
-<span class="cstat-no" title="statement not covered" >            argv.unshift(value);</span>
+<span class="cstat-no" title="statement not covered">        if (value) {</span>
+<span class="cstat-no" title="statement not covered">            argv.unshift(value);</span>
         }
-<span class="cstat-no" title="statement not covered" >        return default_val != null ? default_val : cli.fatal(err_msg);</span>
+<span class="cstat-no" title="statement not covered">        return default_val != null ? default_val : cli.fatal(err_msg);</span>
     }
-<span class="cstat-no" title="statement not covered" >    return value;</span>
+<span class="cstat-no" title="statement not covered">    return value;</span>
 };
 &nbsp;
-cli.getInt = <span class="fstat-no" title="function not covered" >function (default_val) {</span>
-<span class="cstat-no" title="statement not covered" >    return cli.getValue(default_val, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (typeof value === 'number') <span class="cstat-no" title="statement not covered" >return value;</span></span>
-<span class="cstat-no" title="statement not covered" >        if (!value.match(/^(?:-?(?:0|[1-9][0-9]*))$/)) {</span>
-<span class="cstat-no" title="statement not covered" >            throw 'Invalid int';</span>
+cli.getInt = <span class="fstat-no" title="function not covered">function (default_val) {</span>
+<span class="cstat-no" title="statement not covered">    return cli.getValue(default_val, <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (typeof value === 'number') <span class="cstat-no" title="statement not covered">return value;</span></span>
+<span class="cstat-no" title="statement not covered">        if (!value.match(/^(?:-?(?:0|[1-9][0-9]*))$/)) {</span>
+<span class="cstat-no" title="statement not covered">            throw 'Invalid int';</span>
         }
-<span class="cstat-no" title="statement not covered" >        return parseInt(value);</span>
+<span class="cstat-no" title="statement not covered">        return parseInt(value);</span>
     }, cli.getOptError('a number', 'NUMBER'));
 }
 &nbsp;
-cli.getDate = <span class="fstat-no" title="function not covered" >function (default_val) {</span>
+cli.getDate = <span class="fstat-no" title="function not covered">function (default_val) {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return cli.getValue(default_val, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (cli.toType(value) === 'date') <span class="cstat-no" title="statement not covered" >return value;</span></span>
-<span class="cstat-no" title="statement not covered" >        value = new Date(value);</span>
-<span class="cstat-no" title="statement not covered" >        if ( ! value.getTime() ) {</span>
-<span class="cstat-no" title="statement not covered" >            throw value.toString();</span>
+<span class="cstat-no" title="statement not covered">    return cli.getValue(default_val, <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (cli.toType(value) === 'date') <span class="cstat-no" title="statement not covered">return value;</span></span>
+<span class="cstat-no" title="statement not covered">        value = new Date(value);</span>
+<span class="cstat-no" title="statement not covered">        if ( ! value.getTime() ) {</span>
+<span class="cstat-no" title="statement not covered">            throw value.toString();</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        return value;</span>
+<span class="cstat-no" title="statement not covered">        return value;</span>
     }, cli.getOptError('a date', 'DATE'));
 }
 &nbsp;
-cli.getFloat = <span class="fstat-no" title="function not covered" >function (default_val) {</span>
-<span class="cstat-no" title="statement not covered" >    return cli.getValue(default_val, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (!value.match(/^(?:-?(?:0|[1-9][0-9]*))?(?:\.[0-9]*)?$/)) {</span>
-<span class="cstat-no" title="statement not covered" >            throw 'Invalid float';</span>
+cli.getFloat = <span class="fstat-no" title="function not covered">function (default_val) {</span>
+<span class="cstat-no" title="statement not covered">    return cli.getValue(default_val, <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (!value.match(/^(?:-?(?:0|[1-9][0-9]*))?(?:\.[0-9]*)?$/)) {</span>
+<span class="cstat-no" title="statement not covered">            throw 'Invalid float';</span>
         }
-<span class="cstat-no" title="statement not covered" >        return parseFloat(value, 10);</span>
+<span class="cstat-no" title="statement not covered">        return parseFloat(value, 10);</span>
     }, cli.getOptError('a number', 'NUMBER'));
 }
 &nbsp;
-cli.getUrl = <span class="fstat-no" title="function not covered" >function (default_val, identifier) {</span>
-<span class="cstat-no" title="statement not covered" >    identifier = identifier || 'url';</span>
-<span class="cstat-no" title="statement not covered" >    return cli.getValue(default_val, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (!value.match(/^(?:(?:ht|f)tp(?:s?)\:\/\/|~\/|\/)?(?:\w+:\w+@)?((?:(?:[-\w\d{1-3}]+\.)+(?:com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|edu|co\.uk|ac\.uk|it|fr|tv|museum|asia|local|travel|[a-z]{2})?)|((\b25[0-5]\b|\b[2][0-4][0-9]\b|\b[0-1]?[0-9]?[0-9]\b)(\.(\b25[0-5]\b|\b[2][0-4][0-9]\b|\b[0-1]?[0-9]?[0-9]\b)){3}))(?::[\d]{1,5})?(?:(?:(?:\/(?:[-\w~!$+|.,=]|%[a-f\d]{2})+)+|\/)+|\?|#)?(?:(?:\?(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=?(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)(?:&amp;(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=?(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)*)*(?:#(?:[-\w~!$ |\/.,*:;=]|%[a-f\d]{2})*)?$/i)) {</span>
-<span class="cstat-no" title="statement not covered" >            throw 'Invalid URL';</span>
+cli.getUrl = <span class="fstat-no" title="function not covered">function (default_val, identifier) {</span>
+<span class="cstat-no" title="statement not covered">    identifier = identifier || 'url';</span>
+<span class="cstat-no" title="statement not covered">    return cli.getValue(default_val, <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (!value.match(/^(?:(?:ht|f)tp(?:s?)\:\/\/|~\/|\/)?(?:\w+:\w+@)?((?:(?:[-\w\d{1-3}]+\.)+(?:com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|edu|co\.uk|ac\.uk|it|fr|tv|museum|asia|local|travel|[a-z]{2})?)|((\b25[0-5]\b|\b[2][0-4][0-9]\b|\b[0-1]?[0-9]?[0-9]\b)(\.(\b25[0-5]\b|\b[2][0-4][0-9]\b|\b[0-1]?[0-9]?[0-9]\b)){3}))(?::[\d]{1,5})?(?:(?:(?:\/(?:[-\w~!$+|.,=]|%[a-f\d]{2})+)+|\/)+|\?|#)?(?:(?:\?(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=?(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)(?:&amp;(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=?(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)*)*(?:#(?:[-\w~!$ |\/.,*:;=]|%[a-f\d]{2})*)?$/i)) {</span>
+<span class="cstat-no" title="statement not covered">            throw 'Invalid URL';</span>
         }
-<span class="cstat-no" title="statement not covered" >        return value;</span>
+<span class="cstat-no" title="statement not covered">        return value;</span>
     }, cli.getOptError('a ' + identifier, identifier.toUpperCase()));
 }
 &nbsp;
-cli.getEmail = <span class="fstat-no" title="function not covered" >function (default_val) {</span>
-<span class="cstat-no" title="statement not covered" >    return cli.getValue(default_val, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (!value.match(/^(?:[\w\!\#\$\%\&amp;\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&amp;\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/)) {</span>
-<span class="cstat-no" title="statement not covered" >            throw 'Invalid email';</span>
+cli.getEmail = <span class="fstat-no" title="function not covered">function (default_val) {</span>
+<span class="cstat-no" title="statement not covered">    return cli.getValue(default_val, <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (!value.match(/^(?:[\w\!\#\$\%\&amp;\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&amp;\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/)) {</span>
+<span class="cstat-no" title="statement not covered">            throw 'Invalid email';</span>
         }
-<span class="cstat-no" title="statement not covered" >        return value;</span>
+<span class="cstat-no" title="statement not covered">        return value;</span>
     }, cli.getOptError('an email', 'EMAIL'));
 }
 &nbsp;
-cli.getIp = <span class="fstat-no" title="function not covered" >function (default_val) {</span>
-<span class="cstat-no" title="statement not covered" >    return cli.getValue(default_val, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (!value.match(/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/)) {</span>
-<span class="cstat-no" title="statement not covered" >            throw 'Invalid IP';</span>
+cli.getIp = <span class="fstat-no" title="function not covered">function (default_val) {</span>
+<span class="cstat-no" title="statement not covered">    return cli.getValue(default_val, <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (!value.match(/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/)) {</span>
+<span class="cstat-no" title="statement not covered">            throw 'Invalid IP';</span>
         }
-<span class="cstat-no" title="statement not covered" >        return value;</span>
+<span class="cstat-no" title="statement not covered">        return value;</span>
     }, cli.getOptError('an IP', 'IP'));
 }
 &nbsp;
-cli.getPath = <span class="fstat-no" title="function not covered" >function (default_val, identifier) {</span>
-<span class="cstat-no" title="statement not covered" >    identifier = identifier || 'path';</span>
-<span class="cstat-no" title="statement not covered" >    return cli.getValue(default_val, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (value.match(/[?*;{}]/)) {</span>
-<span class="cstat-no" title="statement not covered" >            throw 'Invalid path';</span>
+cli.getPath = <span class="fstat-no" title="function not covered">function (default_val, identifier) {</span>
+<span class="cstat-no" title="statement not covered">    identifier = identifier || 'path';</span>
+<span class="cstat-no" title="statement not covered">    return cli.getValue(default_val, <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (value.match(/[?*;{}]/)) {</span>
+<span class="cstat-no" title="statement not covered">            throw 'Invalid path';</span>
         }
-<span class="cstat-no" title="statement not covered" >        return value;</span>
+<span class="cstat-no" title="statement not covered">        return value;</span>
     }, cli.getOptError('a ' + identifier, identifier.toUpperCase()));
 }
 &nbsp;
-cli.getArrayValue = <span class="fstat-no" title="function not covered" >function (arr, default_val) {</span>
-<span class="cstat-no" title="statement not covered" >    return cli.getValue(default_val, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (arr.indexOf(value) === -1) {</span>
-<span class="cstat-no" title="statement not covered" >            throw 'Unexpected value';</span>
+cli.getArrayValue = <span class="fstat-no" title="function not covered">function (arr, default_val) {</span>
+<span class="cstat-no" title="statement not covered">    return cli.getValue(default_val, <span class="fstat-no" title="function not covered">function (value) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (arr.indexOf(value) === -1) {</span>
+<span class="cstat-no" title="statement not covered">            throw 'Unexpected value';</span>
         }
-<span class="cstat-no" title="statement not covered" >        return value;</span>
+<span class="cstat-no" title="statement not covered">        return value;</span>
     }, cli.getOptError('either [' + arr.join('|') + ']', 'VALUE'));
 }
 &nbsp;
@@ -3272,18 +3270,18 @@ cli.getArrayValue = <span class="fstat-no" title="function not covered" >functio
  * @param {Function} callback
  * @api public
  */
-cli.withStdin = <span class="fstat-no" title="function not covered" >function (encoding, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof encoding === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = encoding;</span>
-<span class="cstat-no" title="statement not covered" >        encoding = 'utf8';</span>
+cli.withStdin = <span class="fstat-no" title="function not covered">function (encoding, callback) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof encoding === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = encoding;</span>
+<span class="cstat-no" title="statement not covered">        encoding = 'utf8';</span>
     }
-<span class="cstat-no" title="statement not covered" >    var stream = process.openStdin(), data = '';</span>
-<span class="cstat-no" title="statement not covered" >    stream.setEncoding(encoding);</span>
-<span class="cstat-no" title="statement not covered" >    stream.on('data', <span class="fstat-no" title="function not covered" >function (chunk) {</span></span>
-<span class="cstat-no" title="statement not covered" >        data += chunk;</span>
+<span class="cstat-no" title="statement not covered">    var stream = process.openStdin(), data = '';</span>
+<span class="cstat-no" title="statement not covered">    stream.setEncoding(encoding);</span>
+<span class="cstat-no" title="statement not covered">    stream.on('data', <span class="fstat-no" title="function not covered">function (chunk) {</span></span>
+<span class="cstat-no" title="statement not covered">        data += chunk;</span>
     });
-<span class="cstat-no" title="statement not covered" >    stream.on('end', <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        callback.apply(cli, [data]);</span>
+<span class="cstat-no" title="statement not covered">    stream.on('end', <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        callback.apply(cli, [data]);</span>
     });
 };
 &nbsp;
@@ -3295,10 +3293,10 @@ cli.withStdin = <span class="fstat-no" title="function not covered" >function (e
  * @param {Function} callback
  * @api public
  */
-cli.withStdinLines = <span class="fstat-no" title="function not covered" >function (callback) {</span>
-<span class="cstat-no" title="statement not covered" >    cli.withStdin(<span class="fstat-no" title="function not covered" >function (data) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var sep = data.indexOf('\r\n') !== -1 ? '\r\n' : '\n';</span>
-<span class="cstat-no" title="statement not covered" >        callback.apply(cli, [data.split(sep), sep]);</span>
+cli.withStdinLines = <span class="fstat-no" title="function not covered">function (callback) {</span>
+<span class="cstat-no" title="statement not covered">    cli.withStdin(<span class="fstat-no" title="function not covered">function (data) {</span></span>
+<span class="cstat-no" title="statement not covered">        var sep = data.indexOf('\r\n') !== -1 ? '\r\n' : '\n';</span>
+<span class="cstat-no" title="statement not covered">        callback.apply(cli, [data.split(sep), sep]);</span>
     });
 };
 &nbsp;
@@ -3312,52 +3310,52 @@ cli.withStdinLines = <span class="fstat-no" title="function not covered" >functi
  * @param {Function} callback (line, sep, eof)
  * @api public
  */
-cli.withInput = <span class="fstat-no" title="function not covered" >function (file, encoding, callback) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof encoding === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = encoding;</span>
-<span class="cstat-no" title="statement not covered" >        encoding = 'utf8';</span>
-    } else <span class="cstat-no" title="statement not covered" >if (typeof file === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >        callback = file;</span>
-<span class="cstat-no" title="statement not covered" >        encoding = 'utf8';</span>
-<span class="cstat-no" title="statement not covered" >        file = 'stdin';</span>
+cli.withInput = <span class="fstat-no" title="function not covered">function (file, encoding, callback) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof encoding === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = encoding;</span>
+<span class="cstat-no" title="statement not covered">        encoding = 'utf8';</span>
+    } else <span class="cstat-no" title="statement not covered">if (typeof file === 'function') {</span>
+<span class="cstat-no" title="statement not covered">        callback = file;</span>
+<span class="cstat-no" title="statement not covered">        encoding = 'utf8';</span>
+<span class="cstat-no" title="statement not covered">        file = 'stdin';</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (file === 'stdin') {</span>
-<span class="cstat-no" title="statement not covered" >        file = process.openStdin();</span>
+<span class="cstat-no" title="statement not covered">    if (file === 'stdin') {</span>
+<span class="cstat-no" title="statement not covered">        file = process.openStdin();</span>
     } else {
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            file = cli.native.fs.createReadStream(file);</span>
-<span class="cstat-no" title="statement not covered" >            file.on('error', cli.fatal);</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            file = cli.native.fs.createReadStream(file);</span>
+<span class="cstat-no" title="statement not covered">            file.on('error', cli.fatal);</span>
         } catch (e) {
-<span class="cstat-no" title="statement not covered" >            return cli.fatal(e);</span>
+<span class="cstat-no" title="statement not covered">            return cli.fatal(e);</span>
         }
     }
-<span class="cstat-no" title="statement not covered" >    file.setEncoding(encoding);</span>
-<span class="cstat-no" title="statement not covered" >    var lines = [], data = '', eof, sep;</span>
-<span class="cstat-no" title="statement not covered" >    file.on('data', <span class="fstat-no" title="function not covered" >function (chunk) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (eof) <span class="cstat-no" title="statement not covered" >return;</span></span>
-<span class="cstat-no" title="statement not covered" >        data += chunk;</span>
-<span class="cstat-no" title="statement not covered" >        if (!sep) {</span>
-<span class="cstat-no" title="statement not covered" >            if (data.indexOf('\r\n') !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >                sep = '\r\n';</span>
-            } else <span class="cstat-no" title="statement not covered" >if (data.indexOf('\n') !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >                sep = '\n';</span>
+<span class="cstat-no" title="statement not covered">    file.setEncoding(encoding);</span>
+<span class="cstat-no" title="statement not covered">    var lines = [], data = '', eof, sep;</span>
+<span class="cstat-no" title="statement not covered">    file.on('data', <span class="fstat-no" title="function not covered">function (chunk) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (eof) <span class="cstat-no" title="statement not covered">return;</span></span>
+<span class="cstat-no" title="statement not covered">        data += chunk;</span>
+<span class="cstat-no" title="statement not covered">        if (!sep) {</span>
+<span class="cstat-no" title="statement not covered">            if (data.indexOf('\r\n') !== -1) {</span>
+<span class="cstat-no" title="statement not covered">                sep = '\r\n';</span>
+            } else <span class="cstat-no" title="statement not covered">if (data.indexOf('\n') !== -1) {</span>
+<span class="cstat-no" title="statement not covered">                sep = '\n';</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                last_line = data;</span>
-<span class="cstat-no" title="statement not covered" >                return;</span>
+<span class="cstat-no" title="statement not covered">                last_line = data;</span>
+<span class="cstat-no" title="statement not covered">                return;</span>
             }
         }
-<span class="cstat-no" title="statement not covered" >        lines = data.split(sep);</span>
-<span class="cstat-no" title="statement not covered" >        data = eof ? null : lines.pop();</span>
-<span class="cstat-no" title="statement not covered" >        while (lines.length) {</span>
-<span class="cstat-no" title="statement not covered" >            callback.apply(cli, [lines.shift(), sep, false]);</span>
+<span class="cstat-no" title="statement not covered">        lines = data.split(sep);</span>
+<span class="cstat-no" title="statement not covered">        data = eof ? null : lines.pop();</span>
+<span class="cstat-no" title="statement not covered">        while (lines.length) {</span>
+<span class="cstat-no" title="statement not covered">            callback.apply(cli, [lines.shift(), sep, false]);</span>
         }
     });
-<span class="cstat-no" title="statement not covered" >    file.on('end', <span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        eof = true;</span>
-<span class="cstat-no" title="statement not covered" >        if (data.length) {</span>
-<span class="cstat-no" title="statement not covered" >            callback.apply(cli, [data, sep || '', false]);</span>
+<span class="cstat-no" title="statement not covered">    file.on('end', <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        eof = true;</span>
+<span class="cstat-no" title="statement not covered">        if (data.length) {</span>
+<span class="cstat-no" title="statement not covered">            callback.apply(cli, [data, sep || '', false]);</span>
         }
-<span class="cstat-no" title="statement not covered" >        callback.apply(cli, [null, null, true]);</span>
+<span class="cstat-no" title="statement not covered">        callback.apply(cli, [null, null, true]);</span>
     });
 };
 &nbsp;
@@ -3367,26 +3365,26 @@ cli.withInput = <span class="fstat-no" title="function not covered" >function (f
  * @param  {Object} obj A Javascript object you wish to know the type of.
  * @return {string}     A string describing the Object's type if it is indeed a built in JavaScript type.
  */
-cli.toType = <span class="fstat-no" title="function not covered" >function(obj) {</span>
-<span class="cstat-no" title="statement not covered" >    var type = ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();</span>
+cli.toType = <span class="fstat-no" title="function not covered">function(obj) {</span>
+<span class="cstat-no" title="statement not covered">    var type = ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function isInt(n) {</span>
-<span class="cstat-no" title="statement not covered" >        return Number(n) === n &amp;&amp; n % 1 === 0;</span>
+<span class="fstat-no" title="function not covered">    function isInt(n) {</span>
+<span class="cstat-no" title="statement not covered">        return Number(n) === n &amp;&amp; n % 1 === 0;</span>
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function isFloat(n){</span>
-<span class="cstat-no" title="statement not covered" >        return n === Number(n) &amp;&amp; n % 1 !== 0;</span>
+<span class="fstat-no" title="function not covered">    function isFloat(n){</span>
+<span class="cstat-no" title="statement not covered">        return n === Number(n) &amp;&amp; n % 1 !== 0;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if ( type === 'number' ) {</span>
-<span class="cstat-no" title="statement not covered" >        if ( isInt(obj) ) {</span>
-<span class="cstat-no" title="statement not covered" >            return 'integer';</span>
-        } else <span class="cstat-no" title="statement not covered" >if ( isFloat(obj) ) {</span>
-<span class="cstat-no" title="statement not covered" >            return 'float';</span>
+<span class="cstat-no" title="statement not covered">    if ( type === 'number' ) {</span>
+<span class="cstat-no" title="statement not covered">        if ( isInt(obj) ) {</span>
+<span class="cstat-no" title="statement not covered">            return 'integer';</span>
+        } else <span class="cstat-no" title="statement not covered">if ( isFloat(obj) ) {</span>
+<span class="cstat-no" title="statement not covered">            return 'float';</span>
         }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return type;</span>
+<span class="cstat-no" title="statement not covered">    return type;</span>
 }
 &nbsp;
 /**
@@ -3395,8 +3393,8 @@ cli.toType = <span class="fstat-no" title="function not covered" >function(obj) 
  * @param {Function} callback
  * @api public
  */
-cli.main = <span class="fstat-no" title="function not covered" >function (callback) {</span>
-<span class="cstat-no" title="statement not covered" >    callback.call(cli, cli.args, cli.options);</span>
+cli.main = <span class="fstat-no" title="function not covered">function (callback) {</span>
+<span class="cstat-no" title="statement not covered">    callback.call(cli, cli.args, cli.options);</span>
 }
 &nbsp;
 /**
@@ -3409,38 +3407,38 @@ cli.main = <span class="fstat-no" title="function not covered" >function (callba
  * @return {Server} server
  * @api public
  */
-cli.createServer = <span class="fstat-no" title="function not covered" >function(/*layers*/) {</span>
-<span class="cstat-no" title="statement not covered" >    var defaultStackErrorHandler = <span class="fstat-no" title="function not covered" >function (req, res, err) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (err) {</span>
-<span class="cstat-no" title="statement not covered" >            console.error(err.stack);</span>
-<span class="cstat-no" title="statement not covered" >            res.writeHead(500, {"Content-Type": "text/plain"});</span>
-<span class="cstat-no" title="statement not covered" >            return res.end(err.stack + "\n");</span>
+cli.createServer = <span class="fstat-no" title="function not covered">function(/*layers*/) {</span>
+<span class="cstat-no" title="statement not covered">    var defaultStackErrorHandler = <span class="fstat-no" title="function not covered">function (req, res, err) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (err) {</span>
+<span class="cstat-no" title="statement not covered">            console.error(err.stack);</span>
+<span class="cstat-no" title="statement not covered">            res.writeHead(500, {"Content-Type": "text/plain"});</span>
+<span class="cstat-no" title="statement not covered">            return res.end(err.stack + "\n");</span>
         }
-<span class="cstat-no" title="statement not covered" >        res.writeHead(404, {"Content-Type": "text/plain"});</span>
-<span class="cstat-no" title="statement not covered" >        res.end("Not Found\n");</span>
+<span class="cstat-no" title="statement not covered">        res.writeHead(404, {"Content-Type": "text/plain"});</span>
+<span class="cstat-no" title="statement not covered">        res.end("Not Found\n");</span>
     };
-<span class="cstat-no" title="statement not covered" >    var handle, error;</span>
-<span class="cstat-no" title="statement not covered" >    handle = error = defaultStackErrorHandler;</span>
-<span class="cstat-no" title="statement not covered" >    var layers = Array.prototype.slice.call(arguments);</span>
+<span class="cstat-no" title="statement not covered">    var handle, error;</span>
+<span class="cstat-no" title="statement not covered">    handle = error = defaultStackErrorHandler;</span>
+<span class="cstat-no" title="statement not covered">    var layers = Array.prototype.slice.call(arguments);</span>
 &nbsp;
     //Allow createServer(a,b,c) and createServer([a,b,c])
-<span class="cstat-no" title="statement not covered" >    if (layers.length &amp;&amp; layers[0] instanceof Array) {</span>
-<span class="cstat-no" title="statement not covered" >        layers = layers[0];</span>
+<span class="cstat-no" title="statement not covered">    if (layers.length &amp;&amp; layers[0] instanceof Array) {</span>
+<span class="cstat-no" title="statement not covered">        layers = layers[0];</span>
     }
-<span class="cstat-no" title="statement not covered" >    layers.reverse().forEach(<span class="fstat-no" title="function not covered" >function (layer) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var child = handle;</span>
-<span class="cstat-no" title="statement not covered" >        handle = <span class="fstat-no" title="function not covered" >function (req, res) {</span></span>
-<span class="cstat-no" title="statement not covered" >            try {</span>
-<span class="cstat-no" title="statement not covered" >                layer(req, res, <span class="fstat-no" title="function not covered" >function (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >                    if (err) <span class="cstat-no" title="statement not covered" >return error(req, res, err);</span></span>
-<span class="cstat-no" title="statement not covered" >                    child(req, res);</span>
+<span class="cstat-no" title="statement not covered">    layers.reverse().forEach(<span class="fstat-no" title="function not covered">function (layer) {</span></span>
+<span class="cstat-no" title="statement not covered">        var child = handle;</span>
+<span class="cstat-no" title="statement not covered">        handle = <span class="fstat-no" title="function not covered">function (req, res) {</span></span>
+<span class="cstat-no" title="statement not covered">            try {</span>
+<span class="cstat-no" title="statement not covered">                layer(req, res, <span class="fstat-no" title="function not covered">function (err) {</span></span>
+<span class="cstat-no" title="statement not covered">                    if (err) <span class="cstat-no" title="statement not covered">return error(req, res, err);</span></span>
+<span class="cstat-no" title="statement not covered">                    child(req, res);</span>
                 });
             } catch (err) {
-<span class="cstat-no" title="statement not covered" >                error(req, res, err);</span>
+<span class="cstat-no" title="statement not covered">                error(req, res, err);</span>
             }
         };
     });
-<span class="cstat-no" title="statement not covered" >    return cli.native.http.createServer(handle);</span>
+<span class="cstat-no" title="statement not covered">    return cli.native.http.createServer(handle);</span>
 };
 &nbsp;
 /**
@@ -3455,17 +3453,17 @@ cli.createServer = <span class="fstat-no" title="function not covered" >function
  * @param {Function} errback (optional)
  * @api public
  */
-cli.exec = <span class="fstat-no" title="function not covered" >function (cmd, callback, errback) {</span>
-<span class="cstat-no" title="statement not covered" >    cli.native.child_process.exec(cmd, <span class="fstat-no" title="function not covered" >function (err, stdout, stderr) {</span></span>
-<span class="cstat-no" title="statement not covered" >        err = err || stderr;</span>
-<span class="cstat-no" title="statement not covered" >        if (err) {</span>
-<span class="cstat-no" title="statement not covered" >            if (errback) {</span>
-<span class="cstat-no" title="statement not covered" >                return errback(err, stdout);</span>
+cli.exec = <span class="fstat-no" title="function not covered">function (cmd, callback, errback) {</span>
+<span class="cstat-no" title="statement not covered">    cli.native.child_process.exec(cmd, <span class="fstat-no" title="function not covered">function (err, stdout, stderr) {</span></span>
+<span class="cstat-no" title="statement not covered">        err = err || stderr;</span>
+<span class="cstat-no" title="statement not covered">        if (err) {</span>
+<span class="cstat-no" title="statement not covered">            if (errback) {</span>
+<span class="cstat-no" title="statement not covered">                return errback(err, stdout);</span>
             }
-<span class="cstat-no" title="statement not covered" >            return cli.fatal('exec() failed\n' + err);</span>
+<span class="cstat-no" title="statement not covered">            return cli.fatal('exec() failed\n' + err);</span>
         }
-<span class="cstat-no" title="statement not covered" >        if (callback) {</span>
-<span class="cstat-no" title="statement not covered" >            callback(stdout.split('\n'));</span>
+<span class="cstat-no" title="statement not covered">        if (callback) {</span>
+<span class="cstat-no" title="statement not covered">            callback(stdout.split('\n'));</span>
         }
     });
 };
@@ -3477,50 +3475,50 @@ cli.exec = <span class="fstat-no" title="function not covered" >function (cmd, c
  * @api public
  */
 var last_progress_call, progress_len = 74, min_progress_increase = 5, last_progress_percentage = 0;
-cli.progress = <span class="fstat-no" title="function not covered" >function (progress, decimals, stream) {</span>
-<span class="cstat-no" title="statement not covered" >    stream = stream || process.stdout;</span>
-<span class="cstat-no" title="statement not covered" >    if (progress &lt; 0 || progress &gt; 1 || isNaN(progress)) <span class="cstat-no" title="statement not covered" >return;</span></span>
-<span class="cstat-no" title="statement not covered" >    if (!decimals) <span class="cstat-no" title="statement not covered" >decimals = 0;</span></span>
-<span class="cstat-no" title="statement not covered" >    var now = (new Date()).getTime();</span>
-<span class="cstat-no" title="statement not covered" >    if (last_progress_call &amp;&amp; (now - last_progress_call) &lt; 100 &amp;&amp; progress !== 1) {</span>
-<span class="cstat-no" title="statement not covered" >        return; </span>//Throttle progress calls
+cli.progress = <span class="fstat-no" title="function not covered">function (progress, decimals, stream) {</span>
+<span class="cstat-no" title="statement not covered">    stream = stream || process.stdout;</span>
+<span class="cstat-no" title="statement not covered">    if (progress &lt; 0 || progress &gt; 1 || isNaN(progress)) <span class="cstat-no" title="statement not covered">return;</span></span>
+<span class="cstat-no" title="statement not covered">    if (!decimals) <span class="cstat-no" title="statement not covered">decimals = 0;</span></span>
+<span class="cstat-no" title="statement not covered">    var now = (new Date()).getTime();</span>
+<span class="cstat-no" title="statement not covered">    if (last_progress_call &amp;&amp; (now - last_progress_call) &lt; 100 &amp;&amp; progress !== 1) {</span>
+<span class="cstat-no" title="statement not covered">        return; </span>//Throttle progress calls
     }
-<span class="cstat-no" title="statement not covered" >    last_progress_call = now;</span>
+<span class="cstat-no" title="statement not covered">    last_progress_call = now;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var pwr = Math.pow(10, decimals);</span>
-<span class="cstat-no" title="statement not covered" >    var percentage_as_num = Math.floor(progress * 100 * pwr) / pwr;</span>
-<span class="cstat-no" title="statement not covered" >    if (!stream.isTTY &amp;&amp; percentage_as_num &lt; 100 &amp;&amp; percentage_as_num - last_progress_percentage &lt; min_progress_increase) {</span>
-<span class="cstat-no" title="statement not covered" >        return; </span>//don't over-print if not TTY
+<span class="cstat-no" title="statement not covered">    var pwr = Math.pow(10, decimals);</span>
+<span class="cstat-no" title="statement not covered">    var percentage_as_num = Math.floor(progress * 100 * pwr) / pwr;</span>
+<span class="cstat-no" title="statement not covered">    if (!stream.isTTY &amp;&amp; percentage_as_num &lt; 100 &amp;&amp; percentage_as_num - last_progress_percentage &lt; min_progress_increase) {</span>
+<span class="cstat-no" title="statement not covered">        return; </span>//don't over-print if not TTY
     }
-<span class="cstat-no" title="statement not covered" >    last_progress_percentage = percentage_as_num;</span>
-<span class="cstat-no" title="statement not covered" >    var percentage = percentage_as_num + '%';</span>
-<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; decimals; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        percentage += ' ';</span>
+<span class="cstat-no" title="statement not covered">    last_progress_percentage = percentage_as_num;</span>
+<span class="cstat-no" title="statement not covered">    var percentage = percentage_as_num + '%';</span>
+<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; decimals; i++) {</span>
+<span class="cstat-no" title="statement not covered">        percentage += ' ';</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (!stream.isTTY) {</span>
-<span class="cstat-no" title="statement not covered" >        if (percentage_as_num &lt; 100) {</span>
-<span class="cstat-no" title="statement not covered" >            stream.write(percentage + '...');</span>
+<span class="cstat-no" title="statement not covered">    if (!stream.isTTY) {</span>
+<span class="cstat-no" title="statement not covered">        if (percentage_as_num &lt; 100) {</span>
+<span class="cstat-no" title="statement not covered">            stream.write(percentage + '...');</span>
         }
         else {
-<span class="cstat-no" title="statement not covered" >            stream.write(percentage + '\n');</span>
-<span class="cstat-no" title="statement not covered" >            last_progress_percentage = 0;</span>
+<span class="cstat-no" title="statement not covered">            stream.write(percentage + '\n');</span>
+<span class="cstat-no" title="statement not covered">            last_progress_percentage = 0;</span>
         }
-<span class="cstat-no" title="statement not covered" >        return;</span>
+<span class="cstat-no" title="statement not covered">        return;</span>
     }
-<span class="cstat-no" title="statement not covered" >    var bar_length = Math.floor(progress_len * progress),</span>
+<span class="cstat-no" title="statement not covered">    var bar_length = Math.floor(progress_len * progress),</span>
         str       = '';
-<span class="cstat-no" title="statement not covered" >    if (bar_length == 0 &amp;&amp; progress &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >        bar_length = 1;</span>
+<span class="cstat-no" title="statement not covered">    if (bar_length == 0 &amp;&amp; progress &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">        bar_length = 1;</span>
     }
-<span class="cstat-no" title="statement not covered" >    for (i = 1; i &lt;= progress_len; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        str += i &lt;= bar_length ? '#' : ' ';</span>
+<span class="cstat-no" title="statement not covered">    for (i = 1; i &lt;= progress_len; i++) {</span>
+<span class="cstat-no" title="statement not covered">        str += i &lt;= bar_length ? '#' : ' ';</span>
     }
-<span class="cstat-no" title="statement not covered" >    stream.clearLine();</span>
-<span class="cstat-no" title="statement not covered" >    stream.write('[' + str + '] ' +  percentage);</span>
-<span class="cstat-no" title="statement not covered" >    if (progress === 1) {</span>
-<span class="cstat-no" title="statement not covered" >        stream.write('\n');</span>
+<span class="cstat-no" title="statement not covered">    stream.clearLine();</span>
+<span class="cstat-no" title="statement not covered">    stream.write('[' + str + '] ' +  percentage);</span>
+<span class="cstat-no" title="statement not covered">    if (progress === 1) {</span>
+<span class="cstat-no" title="statement not covered">        stream.write('\n');</span>
     } else {
-<span class="cstat-no" title="statement not covered" >        stream.cursorTo(0);</span>
+<span class="cstat-no" title="statement not covered">        stream.cursorTo(0);</span>
     }
 };
 &nbsp;
@@ -3531,33 +3529,34 @@ cli.progress = <span class="fstat-no" title="function not covered" >function (pr
  * @api public
  */
 var spinner_interval;
-cli.spinner = <span class="fstat-no" title="function not covered" >function (prefix, end, stream) {</span>
-<span class="cstat-no" title="statement not covered" >    stream = stream || process.stdout;</span>
-<span class="cstat-no" title="statement not covered" >    if(!stream.isTTY) {</span>
-<span class="cstat-no" title="statement not covered" >        stream.write(prefix + '\n');</span>
-<span class="cstat-no" title="statement not covered" >        return;</span>
+cli.spinner = <span class="fstat-no" title="function not covered">function (prefix, end, stream) {</span>
+<span class="cstat-no" title="statement not covered">    stream = stream || process.stdout;</span>
+<span class="cstat-no" title="statement not covered">    if(!stream.isTTY) {</span>
+<span class="cstat-no" title="statement not covered">        stream.write(prefix + '\n');</span>
+<span class="cstat-no" title="statement not covered">        return;</span>
     }
-<span class="cstat-no" title="statement not covered" >    if (end) {</span>
-<span class="cstat-no" title="statement not covered" >        stream.clearLine();</span>
-<span class="cstat-no" title="statement not covered" >        stream.cursorTo(0);</span>
-<span class="cstat-no" title="statement not covered" >        stream.write(prefix + '\n');</span>
-<span class="cstat-no" title="statement not covered" >        return clearInterval(spinner_interval);</span>
+<span class="cstat-no" title="statement not covered">    if (end) {</span>
+<span class="cstat-no" title="statement not covered">        stream.clearLine();</span>
+<span class="cstat-no" title="statement not covered">        stream.cursorTo(0);</span>
+<span class="cstat-no" title="statement not covered">        stream.write(prefix + '\n');</span>
+<span class="cstat-no" title="statement not covered">        return clearInterval(spinner_interval);</span>
     }
-<span class="cstat-no" title="statement not covered" >    prefix = prefix + ' ' || '';</span>
-<span class="cstat-no" title="statement not covered" >    var spinner = ['-','\\','|','/'], i = 0, l = spinner.length;</span>
-<span class="cstat-no" title="statement not covered" >    spinner_interval = setInterval(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >        stream.clearLine();</span>
-<span class="cstat-no" title="statement not covered" >        stream.cursorTo(0);</span>
-<span class="cstat-no" title="statement not covered" >        stream.write(prefix + spinner[i++]);</span>
-<span class="cstat-no" title="statement not covered" >        if (i == l) <span class="cstat-no" title="statement not covered" >i = 0;</span></span>
+<span class="cstat-no" title="statement not covered">    prefix = prefix + ' ' || '';</span>
+<span class="cstat-no" title="statement not covered">    var spinner = ['-','\\','|','/'], i = 0, l = spinner.length;</span>
+<span class="cstat-no" title="statement not covered">    spinner_interval = setInterval(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">        stream.clearLine();</span>
+<span class="cstat-no" title="statement not covered">        stream.cursorTo(0);</span>
+<span class="cstat-no" title="statement not covered">        stream.write(prefix + spinner[i++]);</span>
+<span class="cstat-no" title="statement not covered">        if (i == l) <span class="cstat-no" title="statement not covered">i = 0;</span></span>
     }, 200);
 };
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 11:50:30 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 11:00:42 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
