@@ -1,4 +1,7 @@
-# test coverage for  [cli (v1.0.1)](http://github.com/node-js-libs/cli)  [![npm package](https://img.shields.io/npm/v/npmtest-cli.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-cli) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-cli.svg)](https://travis-ci.org/npmtest/node-npmtest-cli)
+# npmtest-cli
+
+#### test coverage for  [cli (v1.0.1)](http://github.com/node-js-libs/cli)  [![npm package](https://img.shields.io/npm/v/npmtest-cli.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-cli) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-cli.svg)](https://travis-ci.org/npmtest/node-npmtest-cli)
+
 #### A tool for rapidly building command line apps
 
 [![NPM](https://nodei.co/npm/cli.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/cli)
